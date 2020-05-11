@@ -306,11 +306,147 @@ body{
 }
 
 
-
-
-#dieRollMethod{
+#layHandsLaw1{
     position: absolute;
-    top: 100px;
-    left:  50px;
-	font-size: 0.5em;
+    top: 600px;
+    left: 430px;
+	font-size: 0.6em;
+}
+
+#layHandsLaw2{
+    position: absolute;
+    top: 618px;
+    left: 430px;
+	font-size: 0.6em;
+}
+
+#layHandsLaw3{
+    position: absolute;
+    top: 636px;
+    left: 430px;
+	font-size: 0.6em;
+}
+
+#layHandsLaw4{
+    position: absolute;
+    top: 654px;
+    left: 430px;
+	font-size: 0.6em;
+}
+
+
+#layHandsLaw5{
+    position: absolute;
+    top: 672px;
+    left: 430px;
+	font-size: 0.6em;
+}
+
+
+#layHandsNeutral1{
+    position: absolute;
+    top: 600px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+#layHandsNeutral2{
+    position: absolute;
+    top: 618px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+#layHandsNeutral3{
+    position: absolute;
+    top: 636px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+#layHandsNeutral4{
+    position: absolute;
+    top: 654px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+
+#layHandsNeutral5{
+    position: absolute;
+    top: 672px;
+    left: 480px;
+	font-size: 0.6em;
+}
+
+
+#layHandsChaos1{
+    position: absolute;
+    top: 600px;
+    left: 535px;
+	font-size: 0.6em;
+}
+
+#layHandsChaos2{
+    position: absolute;
+    top: 618px;
+    left: 535px;
+	font-size: 0.6em;
+}
+
+#layHandsChaos3{
+    position: absolute;
+    top: 636px;
+    left: 535px;
+	font-size: 0.6em;
+}
+
+#layHandsChaos4{
+    position: absolute;
+    top: 654px;
+    left: 535px;
+	font-size: 0.6em;
+}
+
+
+#layHandsChaos5{
+    position: absolute;
+    top: 672px;
+    left: 535px;
+	font-size: 0.6em;
+}
+
+#level1Spells{
+    position: absolute;
+    top: 785px;
+    left: 370px;
+	font-size: 0.65em;
+}
+
+#level2Spells{
+    position: absolute;
+    top: 785px;
+    left: 415px;
+	font-size: 0.65em;
+}
+
+#level3Spells{
+    position: absolute;
+    top: 785px;
+    left: 460px;
+	font-size: 0.65em;
+}
+
+#level4Spells{
+    position: absolute;
+    top: 785px;
+    left: 505px;
+	font-size: 0.65em;
+}
+
+#level5Spells{
+    position: absolute;
+    top: 785px;
+    left: 550px;
+	font-size: 0.65em;
 }

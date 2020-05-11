@@ -15,13 +15,13 @@ function getDeity($input)
     $a09 = array("Ildavir", "Goddess of nature", "Neutral");
     $a10 = array("Pelagia", "Goddess of the sea", "Neutral");
     $a11 = array("Cthulhu", "Priest of the Old Ones", "Neutral");
-    $a12 = array("Ahriman", "God of death & disease", "Chaos");
-    $a13 = array("Hidden Lord", "God of secrets", "Chaos");
-    $a14 = array("Azi Dahaka", "Demon prince of storms & waste", "Chaos");
-    $a15 = array("Bobugbubilz", "Demon lord of evil amphibians", "Chaos");
-    $a16 = array("Cadixtat", "Chaos titan", "Chaos");
-    $a17 = array("Nimlurun", "The unclean one, lord of filth & pollution", "Chaos");
-    $a18 = array("Malotoch", "Carrion crow god", "Chaos");
+    $a12 = array("Ahriman", "God of death & disease", "Chaotic");
+    $a13 = array("Hidden Lord", "God of secrets", "Chaotic");
+    $a14 = array("Azi Dahaka", "Demon prince of storms & waste", "Chaotic");
+    $a15 = array("Bobugbubilz", "Demon lord of evil amphibians", "Chaotic");
+    $a16 = array("Cadixtat", "Chaotic titan", "Chaotic");
+    $a17 = array("Nimlurun", "The unclean one, lord of filth & pollution", "Chaotic");
+    $a18 = array("Malotoch", "Carrion crow god", "Chaotic");
 
     $array1= array($a00, $a01, $a02, $a03, $a04, $a05, $a06, $a07, $a08, $a09, $a10, $a11, $a12, $a13, $a14, $a15, $a16, $a17, $a18);
     
@@ -58,7 +58,7 @@ function getDeityUnholy($input)
 
     if($input >=0 && $input <=7)
     {
-        $unholy = "Undead, demons, devils, chaotic extraplanar creatures, monsters, Chaos Primes, chaotic humanoids & chaotic dragons";
+        $unholy = "Undead, demons, devils, chaotic extraplanar creatures, monsters, Chaotic Primes, chaotic humanoids & chaotic dragons";
     }
 
     if($input >=8 && $input <=11)
@@ -75,5 +75,74 @@ function getDeityUnholy($input)
 
 }
 
+function layOnHandsLaw($alignment)
+{
+    if($alignment == "Lawful")
+    {
+        $heal = array("Fail", "2 dice", "3 dice", "4 dice", "5 dice");
+        return $heal;
+    }
+    
+    if($alignment == "Neutral")
+    {
+        $heal = array("Fail", "1 dice", "2 dice", "3 dice", "4 dice");
+        return $heal;
+    }
+    
+    if($alignment == "Chaotic")
+    {
+        $heal = array("Fail", "1 dice", "1 dice", "2 dice", "3 dice");
+        return $heal;
+    }
+
+}
+
+
+function layOnHandsNeutral($alignment)
+{
+    if($alignment == "Lawful")
+    {
+        $heal = array("Fail", "1 dice", "2 dice", "3 dice", "4 dice");
+        return $heal;
+    }
+    
+    if($alignment == "Neutral")
+    {
+        
+        $heal = array("Fail", "2 dice", "3 dice", "4 dice", "5 dice");
+        return $heal;
+        
+    }
+    
+    if($alignment == "Chaotic")
+    {
+        $heal = array("Fail", "1 dice", "2 dice", "3 dice", "4 dice");
+        return $heal;
+    }
+
+}
+
+function layOnHandsChaos($alignment)
+{
+    if($alignment == "Lawful")
+    {
+        $heal = array("Fail", "1 dice", "1 dice", "2 dice", "3 dice");
+        return $heal;
+    }
+    
+    if($alignment == "Neutral")
+    {
+        $heal = array("Fail", "1 dice", "2 dice", "3 dice", "4 dice");
+        return $heal;
+        
+    }
+    
+    if($alignment == "Chaotic")
+    {
+        $heal = array("Fail", "2 dice", "3 dice", "4 dice", "5 dice");
+        return $heal;
+    }
+
+}
 
 ?>

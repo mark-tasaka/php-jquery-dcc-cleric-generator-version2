@@ -279,5 +279,70 @@ return $title;
 
 }
 
+function spellsPerLevel($level)
+{
+    if($level == 1)
+    {
+        $spells = array("4", "-", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 2)
+    {
+        $spells = array("5", "-", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 3)
+    {
+        $spells = array("5", "3", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 4)
+    {
+        $spells = array("6", "4", "-", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 5)
+    {
+        $spells = array("6", "5", "2", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 6)
+    {
+        $spells = array("7", "5", "3", "-", "-");
+        return $spells;
+    }
+    
+    if($level == 7)
+    {
+        $spells = array("7", "6", "4", "1", "-");
+        return $spells;
+    }
+    
+    if($level == 8)
+    {
+        $spells = array("8", "6", "5", "2", "-");
+        return $spells;
+    }
+    
+    if($level == 9)
+    {
+        $spells = array("8", "7", "5", "3", "1");
+        return $spells;
+    }
+    
+    if($level == 10)
+    {
+        $spells = array("9", "7", "6", "4", "2");
+        return $spells;
+    }
+
+
+}
+
 
 ?>

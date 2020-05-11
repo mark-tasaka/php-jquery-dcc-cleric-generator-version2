@@ -144,12 +144,37 @@
 
        $actionDice = actionDice($level);
 
-      // $threatRange = threatRange($level);
-
        $title = title($level, $alignment);
+       
+       $layHandsLaw = layOnHandsLaw($alignment);
+       $layHandsLaw1 = $layHandsLaw[0];
+       $layHandsLaw2 = $layHandsLaw[1];
+       $layHandsLaw3 = $layHandsLaw[2];
+       $layHandsLaw4 = $layHandsLaw[3];
+       $layHandsLaw5 = $layHandsLaw[4];
+
+       $layHandsNeutral = layOnHandsNeutral($alignment);
+       $layHandsNeutral1 = $layHandsNeutral[0];
+       $layHandsNeutral2 = $layHandsNeutral[1];
+       $layHandsNeutral3 = $layHandsNeutral[2];
+       $layHandsNeutral4 = $layHandsNeutral[3];
+       $layHandsNeutral5 = $layHandsNeutral[4];
+
+       $layHandsChaos = layOnHandsChaos($alignment);
+       $layHandsChaos1 = $layHandsChaos[0];
+       $layHandsChaos2 = $layHandsChaos[1];
+       $layHandsChaos3 = $layHandsChaos[2];
+       $layHandsChaos4 = $layHandsChaos[3];
+       $layHandsChaos5 = $layHandsChaos[4];
+
+       $spellsPerLevel = spellsPerLevel($level);
+       $level1Spells = $spellsPerLevel[0];
+       $level2Spells = $spellsPerLevel[1];
+       $level3Spells = $spellsPerLevel[2];
+       $level4Spells = $spellsPerLevel[3];
+       $level5Spells = $spellsPerLevel[4];
 
 
-         
         $weaponArray = array();
         $weaponNames = array();
         $weaponDamage = array();
@@ -243,7 +268,7 @@
        
        <span id="weaponsAllowed">
            <?php
-           echo "Weapons (holy): " . $weaponsAllowed;
+           echo "Weapons (holy): " . $weaponsAllowed . ",";
            ?>
        </span>
 
@@ -383,6 +408,132 @@
                 echo $title;
             ?>
         </span>
+        
+        <span id="layHandsLaw1">
+            <?php
+                echo $layHandsLaw1;
+            ?>
+        </span>
+        
+        <span id="layHandsLaw2">
+            <?php
+                echo $layHandsLaw2;
+            ?>
+        </span>
+        
+        <span id="layHandsLaw3">
+            <?php
+                echo $layHandsLaw3;
+            ?>    
+        </span>
+
+        <span id="layHandsLaw4">
+            <?php
+                echo $layHandsLaw4;
+            ?>
+        </span>
+
+        <span id="layHandsLaw5">
+            <?php
+                echo $layHandsLaw5;
+            ?>
+        </span>
+
+        
+        <span id="layHandsNeutral1">
+            <?php
+                echo $layHandsNeutral1;
+            ?>
+        </span>
+        
+        <span id="layHandsNeutral2">
+            <?php
+                echo $layHandsNeutral2;
+            ?>
+        </span>
+        
+        <span id="layHandsNeutral3">
+            <?php
+                echo $layHandsNeutral3;
+            ?>
+        </span>
+        
+        <span id="layHandsNeutral4">
+            <?php
+                echo $layHandsNeutral4;
+            ?>
+        </span>
+        
+        <span id="layHandsNeutral5">
+            <?php
+                echo $layHandsNeutral5;
+            ?>
+        </span>
+
+        
+        
+        <span id="layHandsChaos1">
+            <?php
+                echo $layHandsChaos1;
+            ?>
+        </span>
+        
+        <span id="layHandsChaos2">
+            <?php
+                echo $layHandsChaos2;
+            ?>
+        </span>
+        
+        <span id="layHandsChaos3">
+            <?php
+                echo $layHandsChaos3;
+            ?>
+        </span>
+        
+        <span id="layHandsChaos4">
+            <?php
+                echo $layHandsChaos4;
+            ?>
+        </span>
+        
+        <span id="layHandsChaos5">
+            <?php
+                echo $layHandsChaos5;
+            ?>
+        </span>
+
+        
+        
+        <span id="level1Spells">
+            <?php
+                echo $level1Spells;
+            ?>
+        </span>
+        
+        <span id="level2Spells">
+            <?php
+                echo $level2Spells;
+            ?>
+        </span>
+        
+        <span id="level3Spells">
+            <?php
+                echo $level3Spells;
+            ?>
+        </span>
+        
+        <span id="level4Spells">
+            <?php
+                echo $level4Spells;
+            ?>
+        </span>
+        
+        <span id="level5Spells">
+            <?php
+                echo $level5Spells;
+            ?>
+        </span>
+        
 
         
 		<p id="birthAugur"><span id="luckySign"></span>: <span id="luckyRoll"></span> (<span id="LuckySignBonus"></span>)</p>
@@ -487,7 +638,7 @@
         let armour = '<?php echo $armourName ?>';
 	    let	profession = getOccupation();
 	    let birthAugur = getLuckySign();
-        let bonusLanguages = getBonusLanguages(intelligenceMod, birthAugur);
+        let bonusLanguages = getBonusLanguages(intelligenceMod, birthAugur, luckMod);
 	    let baseAC = getBaseArmourClass(agilityMod) + adjustAC(birthAugur, luckMod);
 
 		let clericCharacter = {
@@ -514,8 +665,8 @@
             "armourClass": <?php echo $totalAcDefense ?> + baseAC,
             "hp": getHitPoints (level, staminaMod) + hitPointAdjustPerLevel(birthAugur,  luckMod),
             "spellCheck": personalityMod + <?php echo $level ?>,
-			"melee": strengthMod + meleeAdjust(birthAugur, luckMod),
-			"range": agilityMod + rangeAdjust(birthAugur, luckMod),
+			"melee": <?php echo $attackBonus ?> + strengthMod + meleeAdjust(birthAugur, luckMod),
+			"range": <?php echo $attackBonus ?> + agilityMod + rangeAdjust(birthAugur, luckMod),
 			"meleeDamage": strengthMod + meleeDamageAdjust(birthAugur, luckMod),
 			"rangeDamage": rangeDamageAdjust(birthAugur, luckMod),
             "reflex": <?php echo $reflexBase ?> + agilityMod + adjustRef(birthAugur, luckMod),
